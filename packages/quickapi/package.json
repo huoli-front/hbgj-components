@@ -1,7 +1,7 @@
 {
   "name": "@hbgj/quickapi",
   "moduleName": "quickapi",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "description": "",
   "main": "index.js",
   "module": "esm/quickapi.js",
