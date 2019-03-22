@@ -5,7 +5,7 @@
 ## Usage
 
 ```
-import utils from '@hbgj/utils';
+import Utils from '@hbgj/utils';
 
 // TODO: DEMONSTRATE API
 ```

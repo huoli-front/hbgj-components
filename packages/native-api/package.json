@@ -52,6 +52,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.3.4",
+    "js-cookie": "^2.2.0",
     "jsonrpc-lite": "^2.0.5"
   }
 }
