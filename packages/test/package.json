@@ -16,7 +16,7 @@
   ],
   "publishConfig": {
     "access": "public",
-    "tag": "test"
+    "tag": "mytest"
   },
   "repository": {
     "type": "git",
