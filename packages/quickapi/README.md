@@ -1,5 +1,8 @@
 <p align="center">
+  <a href="https://travis-ci.com/huoli-front/hbgj-components"><img alt="Travis Status" src="https://travis-ci.com/huoli-front/hbgj-components.svg?branch=master"></a>
 </p>
+# 通用组件汇总
+
 # 快应用与h5页面交互api h5端实现
 # 请使用 1.1.x 以后的版本
 ## 通信协议 jsonrpc 2.0
