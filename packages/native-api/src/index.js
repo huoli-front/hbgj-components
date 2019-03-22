@@ -141,10 +141,10 @@ if (!window.NativeAPI.sendToNative) {
             // 加了 cookie 的版本号
             // 高铁 3.5
             // 航班 5.2
-            // 航班上刷新有问题，屏蔽 "openetjs://start?type=nativeapi"
-            // window.location.href = "openetjs://start?type=nativeapi";
+            // 航班上刷新有问题，屏蔽 "openetjs://start?type=native-api"
+            // window.location.href = "openetjs://start?type=native-api";
             // 高铁上面调用这个 scheme url 之后无法执行后续的 script 标签
-            // window.location.href = "gtgj://start?type=nativeapi";
+            // window.location.href = "gtgj://start?type=native-api";
             if (!/gtgj|hbgj/i.test(appName)) {
                 clearTimeout(timer);
                 window.NativeAPI.sendToNative = handleInternalError;

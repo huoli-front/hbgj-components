@@ -1,5 +1,5 @@
 import nativeApi from '../src/index';
 
-describe('@hbgj/nativeapi', () => {
+describe('@hbgj/native-api', () => {
     it('needs tests');
 });

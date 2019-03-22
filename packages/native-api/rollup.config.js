@@ -6,7 +6,7 @@ const { sizeSnapshot } = require("rollup-plugin-size-snapshot");
 const { uglify } = require("rollup-plugin-uglify");
 
 const ModuleName = "NativeApi";
-const moduleFileName = "nativeapi";
+const moduleFileName = "native-api";
 const pkg = require("./package.json");
 
 console.log(pkg.version);
