@@ -5,10 +5,11 @@ const nodeResolve = require("rollup-plugin-node-resolve");
 const { sizeSnapshot } = require("rollup-plugin-size-snapshot");
 const { uglify } = require("rollup-plugin-uglify");
 
-const ModuleName = "QuickApi";
-const moduleFileName = "quickapi";
+const ModuleName = "NativeApi";
+const moduleFileName = "native-api";
 const pkg = require("./package.json");
 
+console.log(pkg.version);
 //
 // const createLintingRule = () => ({
 //     throwOnError: true,

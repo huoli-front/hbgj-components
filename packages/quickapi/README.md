@@ -12,7 +12,7 @@
 ## 本组件依赖 Promise 
 引入Promise支持<a href="#webpack-promise">推荐做法</a>
 
-## 使用方法
+## Usage
     1. `npm i @hbgj/quickapi`
     2. 引入api，你的环境需要有Promise支持
 ```ecmascript 6

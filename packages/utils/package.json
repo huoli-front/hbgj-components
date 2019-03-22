@@ -1,14 +1,29 @@
 {
-  "name": "@hbgj/quickapi",
-  "version": "1.1.4",
-  "description": "",
+  "name": "@hbgj/utils",
+  "version": "1.0.0",
+  "description": "utils",
+  "keywords": [
+    "helper",
+    "utils"
+  ],
+  "author": "yujindong <83575615@qq.com>",
+  "homepage": "https://github.com/huoli-front/hbgj-components#readme",
+  "license": "MIT",
   "main": "index.js",
-  "module": "dist/esm/quickapi.js",
+  "module": "dist/esm/utils.js",
+  "directories": {
+    "lib": "dist",
+    "test": "__tests__"
+  },
   "files": [
     "dist"
   ],
   "publishConfig": {
     "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/huoli-front/hbgj-components.git"
   },
   "scripts": {
     "build": "rollup -c",
@@ -16,19 +31,9 @@
     "prepublishOnly": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "yujindong <83575615@qq.com>",
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/huoli-front/hbgj-components.git"
-  },
-  "keywords": [
-    "components"
-  ],
   "bugs": {
     "url": "https://github.com/huoli-front/hbgj-components/issues"
   },
-  "homepage": "https://github.com/huoli-front/hbgj-components#readme",
-  "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.3.4",
     "@babel/plugin-proposal-class-properties": "^7.3.4",
@@ -46,11 +51,7 @@
     "rollup-plugin-size-snapshot": "^0.8.0",
     "rollup-plugin-uglify": "^6.0.2"
   },
-  "peerDependencies": {
-    "jsonrpc-lite": "^2.0.5"
-  },
   "dependencies": {
-    "@babel/runtime": "^7.3.4",
-    "jsonrpc-lite": "^2.0.5"
+    "@babel/runtime": "^7.3.4"
   }
 }

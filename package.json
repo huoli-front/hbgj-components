@@ -7,6 +7,7 @@
     "postinstall": "node ./scripts/postinstall.js",
     "clean": "git clean -fdX .",
     "start": "node ./scripts/start.js",
+    "new-components": "chmod +x ./scripts/create_new_package.sh && ./scripts/create_new_package.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
