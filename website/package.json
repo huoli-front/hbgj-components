@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "website",
-  "version": "0.0.4",
+  "version": "0.0.5-alpha.0",
   "scripts": {
     "build": "NODE_ENV=production webpack -p",
     "start": "webpack-dev-server --inline --host 0.0.0.0",
@@ -13,7 +13,7 @@
     "@babel/core": "^7.3.4",
     "@babel/polyfill": "^7.2.5",
     "@hbgj/native-api": "^1.0.0",
-    "@hbgj/quickapi": "^1.1.4",
+    "@hbgj/quickapi": "^1.1.5-alpha.0",
     "babel-loader": "^8.0.5",
     "copy-webpack-plugin": "^5.0.1",
     "css-loader": "^2.1.1",
