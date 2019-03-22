@@ -13,9 +13,10 @@
 引入Promise支持<a href="#webpack-promise">推荐做法</a>
 
 ## 使用方法
-* es6模块引入（推荐方式)
+    1. `npm i @hbgj/quickapi`
+    2. 引入api，你的环境需要有Promise支持
 ```ecmascript 6
-    // 你可能需@babel/polyfill 不推荐
+    // 你可能需@babel/polyfill 但不推荐此做法
     // import "@babel/polyfill";
     
     import QuickApi from "@hbgj/quickapi";
