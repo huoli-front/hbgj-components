@@ -5,7 +5,7 @@ jobs:
   include:
   - stage: BUILD
     if: tag =~ ^@hbgj\/.*[0-9]
-    env: NPM_TAG=$([[ "$TRAVIS_TAG" == *-* ]] && echo "next" || echo "latest")
+    env: NPM_TAG=$([[ "$TRAVIS_TAG" == @*@*-* ]] && echo "next" || echo "latest")
     script:
     - echo "Releasing $TRAVIS_TAG to npm with tag \"$NPM_TAG\" ..."
     before_deploy:
