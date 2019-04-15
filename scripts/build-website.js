@@ -7,7 +7,7 @@ function exec(cmd) {
 
 const cwd = process.cwd();
 
-if (!process.argv.includes("--no-website")) {
+if (!process.argv.includes("--no-website-bak")) {
     process.chdir(path.resolve(__dirname, "../website"));
     exec("npm run build");
 }

@@ -1,0 +1,75 @@
+
+
+.api-wrapper {
+  padding-left: 20px;
+  display: block;
+  box-shadow: inset 500px 0 #fff, inset 1020px 0 #2d2d2d;
+  min-height: 100vh;
+}
+@media screen and (max-width: 1270px) {
+  .api-wrapper {
+    box-shadow: none;
+    padding: 0 20px;
+  }
+}
+
+.markdown {
+  pre {
+    background: #2d2d2d;
+    float: left;
+    clear: right;
+    white-space: pre-wrap;
+  }
+
+  h1, h2, h3 {
+    position: relative;
+    clear: both;
+  }
+  h2 {
+    font-size: 150%;
+    padding-top: 40px;
+    position: relative;
+    a {
+      color: #2d2d2d;
+    }
+  }
+  a {
+    color: #2d8cf0;
+    text-decoration: none;
+  }
+  h1 {
+    padding: 40px 0 10px;
+    color: #2d8cf0;
+    font-size: 200%;
+  }
+  p {
+    margin: 1em 0;
+  }
+
+
+  >:not(pre):not(h1):not(h2) {
+    display: block;
+    clear: both;
+    float: left;
+    width: 500px;
+    padding-right: 40px;
+  }
+
+  @media screen and (max-width: 1270px) {
+    >pre {
+      float: none;
+      padding: 20px;
+      border-radius: 6px;
+      overflow: auto;
+      width: 100%;
+    }
+    >:not(pre):not(h1):not(h2) {
+      display: block;
+      float: none;
+      width: auto;
+    }
+
+  }
+
+
+}

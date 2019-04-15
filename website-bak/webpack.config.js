@@ -36,7 +36,7 @@ module.exports = {
         process.env.NODE_ENV === "production"
             ? [
                 new SWPrecacheWebpackPlugin({
-                    cacheId: "hbgj-components-website",
+                    cacheId: "hbgj-components-website-bak",
                     staticFileGlobsIgnorePatterns: [/\.map$/]
                 })
             ]
