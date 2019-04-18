@@ -1,7 +1,7 @@
 {
-  "name": "vue-seed",
   "private": true,
-  "version": "1.0.0",
+  "name": "website",
+  "version": "0.0.7-alpha.0",
   "description": "",
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
