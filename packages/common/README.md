@@ -1,13 +1,12 @@
-# 公共功能统一
+# 公共功能汇总
 
 <p align="center">
-    <a href="https://www.npmjs.com/package/@hbgj/quickapi"><img alt="npm" src="https://img.shields.io/npm/v/@hbgj/common.svg"></a>
-    <a href="https://www.npmjs.com/package/@hbgj/quickapi"><img alt="npm" src="https://img.shields.io/npm/dt/@hbgj/common.svg?style=flat-square"></a>
-    <a href="https://www.npmjs.com/package/@hbgj/quickapi"><img alt="npm bundle size" src="https://img.shields.io/bundlephobia/minzip/@hbgj/common.svg?style=flat-square"></a>
+    <a href="https://www.npmjs.com/package/@hbgj/common"><img alt="npm" src="https://img.shields.io/npm/v/@hbgj/common.svg"></a>
+    <a href="https://www.npmjs.com/package/@hbgj/common"><img alt="npm" src="https://img.shields.io/npm/dy/@hbgj/common.svg?style=flat-square"></a>
+    <a href="https://www.npmjs.com/package/@hbgj/common"><img alt="npm bundle size" src="https://img.shields.io/bundlephobia/minzip/@hbgj/common.svg?style=flat-square"></a>
     <a href="https://travis-ci.org/huoli-front/hbgj-components"><img alt="Travis (.org)" src="https://img.shields.io/travis/huoli-front/hbgj-components.svg?style=flat-square"></a>
 </p>  
 
-## 通信协议 jsonrpc 2.0
 ## 本组件依赖 Promise 
 引入Promise支持<a href="#webpack-promise">推荐做法</a>
 ## 暂时不支持个别组件按需加载，价值不大
