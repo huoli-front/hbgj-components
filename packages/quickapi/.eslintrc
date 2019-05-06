@@ -12,6 +12,6 @@
   ],
   "rules": {
     "no-unused-vars": [2, { "ignoreRestSiblings": true }],
-    "prefer-arrow-callback": 2,
+    "prefer-arrow-callback": 2
   }
 }
