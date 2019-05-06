@@ -2,7 +2,7 @@
 
 <p align="center">
     <a href="https://www.npmjs.com/package/@hbgj/common"><img alt="npm" src="https://img.shields.io/npm/v/@hbgj/common.svg"></a>
-    <a href="https://www.npmjs.com/package/@hbgj/common"><img alt="npm" src="https://img.shields.io/npm/dy/@hbgj/common.svg?style=flat-square"></a>
+    <a href="https://www.npmjs.com/package/@hbgj/common"><img alt="npm" src="https://img.shields.io/npm/dt/@hbgj/common.svg?style=flat-square"></a>
     <a href="https://www.npmjs.com/package/@hbgj/common"><img alt="npm bundle size" src="https://img.shields.io/bundlephobia/minzip/@hbgj/common.svg?style=flat-square"></a>
     <a href="https://travis-ci.org/huoli-front/hbgj-components"><img alt="Travis (.org)" src="https://img.shields.io/travis/huoli-front/hbgj-components.svg?style=flat-square"></a>
 </p>  
