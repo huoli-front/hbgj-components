@@ -20,11 +20,10 @@
     import Common from "@hbgj/common";
     const { Config, Util, App } = Common;
     let params = _.extend({}, {
-          interType: 0,  // 0国际 1国内
-          scty: "PEK",
-          ecty: "SHA",
-          date: "2019-12-01",
-          fdate: "2019-12-11",
+          scty: "PEK", // 出发地三字码
+          ecty: "SHA", // 目的地三字码
+          date: "2019-12-01", // 去程
+          fdate: "2019-12-11", // 返程
           cabin: "4" // // 4 经济舱，7 公务舱
         });
     // type  0 国际 1 国内
