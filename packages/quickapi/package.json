@@ -1,7 +1,7 @@
 {
   "name": "@hbgj/quickapi",
   "version": "1.1.5",
-  "description": "",
+  "description": "quickapi bridge",
   "main": "index.js",
   "module": "dist/esm/quickapi.js",
   "files": [
