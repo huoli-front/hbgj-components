@@ -3,12 +3,27 @@ import config from "./config";
 import jsonrpc from "jsonrpc-lite";
 import { idGenerator } from "./utils";
 import { send } from "./stream";
-
+const searchStr = window.location.search;
+const quickappDebug = searchStr.indexOf('quickappDebug=true') !== -1;
+const quickappDebugTitle = 'quickapp';
 // const methods = {};
 const callbacks = {};
 
 if (config.isQuickApp) {
     system.onmessage = function(message) {
+        if(quickappDebug) {
+            try {
+                window.console.groupCollapsed(`${quickappDebugTitle} receive`);
+            } catch (e) {
+                window.console.log(`${quickappDebugTitle} receive`);
+            }
+            window.console.log(message);
+            try {
+                window.console.groupEnd();
+            } catch (e) {
+                window.console.log('log end');
+            }
+        }
         try {
             const result = jsonrpc.parse(message);
             let callback = callbacks[result.payload.id];
@@ -35,6 +50,20 @@ if (config.isQuickApp) {
 function invoke(method, param) {
     return new Promise((resolve, reject) => {
         const request = jsonrpc.request(idGenerator.next().value, method, param);
+        if(quickappDebug) {
+            try {
+                window.console.groupCollapsed(`${quickappDebugTitle} post`);
+            } catch (e) {
+                window.console.log(`${quickappDebugTitle} post`);
+            }
+            window.console.log(request.toString());
+            try {
+                window.console.groupEnd();
+            } catch (e) {
+                window.console.log('log end');
+            }
+        }
+
         if (config.isQuickApp) {
             send(request.toString());
             callbacks[request.id] = function(err, result) {
