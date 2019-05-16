@@ -19,52 +19,52 @@ export const gaotieAppUrl = 'http://a.app.qq.com/o/simple.jsp?pkgname=com.gtgj.v
 
 // cookie 参数 测试环境与正式环境，使用rsscc.cn,
 export const cookieOptions = {
-    secure: !debug,
-    expires: 30, // js-cookie expires 单位是天
-    domain: host,
-    path: '/'
+  secure: !debug,
+  expires: 30, // js-cookie expires 单位是天
+  domain: host,
+  path: '/'
 };
 
 // token 使用的cookie配置
 const tokenOption = {};
 Object.assign(tokenOption, cookieOptions, {
-    domain: /\.rsscc\.cn$/.test(host) ? '.rsscc.cn' : host
+  domain: /\.rsscc\.cn$/.test(host) ? '.rsscc.cn' : host
 });
 
 export const tokenCookieOptions = tokenOption;
 
 // 非安全模式cookie
 export const cookieOptionsUnsecure = {
-    expires: 30, // js-cookie expires 单位是天
-    domain: host,
-    path: '/'
+  expires: 30, // js-cookie expires 单位是天
+  domain: host,
+  path: '/'
 };
 
 export const sessionOptions = {
-    secure: cookieOptions.secure,
-    domain: host,
-    path: cookieOptions.path
+  secure: cookieOptions.secure,
+  domain: host,
+  path: cookieOptions.path
 };
 
 // 正式，测试，开发环境，都使用非安全cookie的session配置
 export const sessionCookieUnsecure = {
-    domain: host,
-    path: cookieOptions.path
+  domain: host,
+  path: cookieOptions.path
 };
 
 
 const config = {
-    isHD,
-    isVISA,
-    isTest,
-    debug,
-    h5Prefix,
-    hangbanAppUrl,
-    gaotieAppUrl,
-    cookieOptions,
-    tokenCookieOptions,
-    cookieOptionsUnsecure,
-    sessionOptions,
-    sessionCookieUnsecure
+  isHD,
+  isVISA,
+  isTest,
+  debug,
+  h5Prefix,
+  hangbanAppUrl,
+  gaotieAppUrl,
+  cookieOptions,
+  tokenCookieOptions,
+  cookieOptionsUnsecure,
+  sessionOptions,
+  sessionCookieUnsecure
 };
 export default Object.freeze(config);

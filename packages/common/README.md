@@ -30,6 +30,13 @@
     const url = App.getTicketList(params, {type: 0 });
 
 ```
+## METHODS 
+| method | paramsType | return | description 
+| ------- | -------- | -------- | -------- |
+| App.getTicketList| JSON | url | 生成机票列表页链接 |
+| App.getTicketDetail| JSON | url | 生成机票详情页链接 |
+| App.getCouponsList| null | url | 生成优惠券列表页链接 |
+| App.getHome| null | url | 生成首页链接 |
   
   
 ## webpack管理项目 增加promise支持
