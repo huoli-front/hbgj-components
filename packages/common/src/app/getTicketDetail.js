@@ -10,11 +10,13 @@ function fixParams(params) {
     params.acode = params.acode || params.arr;
     deleteIfExists(params, 'dep');
     deleteIfExists(params, 'arr');
+    deleteIfExists(params, 'no');
   } else {
     params.dep = params.dep || params.dcode;
     params.arr = params.arr || params.acode;
-    deleteIfExists(params, 'dcode')
-    deleteIfExists(params, 'acode')
+    deleteIfExists(params, 'dcode');
+    deleteIfExists(params, 'acode');
+    deleteIfExists(params, 'shareid');
   }
 }
 /**
