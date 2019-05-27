@@ -18,7 +18,14 @@ export function isWechat () {
   return /micromessenger/i.test(ua);
 }
 
+
+export function deleteIfExists(obj, key) {
+  if(obj[key]) {
+    delete obj[key];
+  }
+}
 export default {
   isApp,
-  isWechat
+  isWechat,
+  deleteIfExists
 }

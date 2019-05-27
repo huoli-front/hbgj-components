@@ -1,7 +1,22 @@
-import {isApp} from '../util/index';
+import {isApp, deleteIfExists} from '../util/index';
 import { h5Prefix, debug } from '../config/index';
 const appUrlPrefix = 'weixinhbgj://start';
 const debugLogTitle = '@hbgj/common App.getTicketDetail';
+
+function fixParams(params) {
+  if(!isApp()) {
+    params.v = 2;
+    params.dcode = params.dcode || params.dep;
+    params.acode = params.acode || params.arr;
+    deleteIfExists(params, 'dep');
+    deleteIfExists(params, 'arr');
+  } else {
+    params.dep = params.dep || params.dcode;
+    params.arr = params.arr || params.acode;
+    deleteIfExists(params, 'dcode')
+    deleteIfExists(params, 'acode')
+  }
+}
 /**
  * 生成机票详情页面链接， h5环境，需要有options参数判断是国内还是国际 默认当成国际
  * @param params
@@ -24,15 +39,11 @@ function getTicketDetail(params, options = { type: 0 }) {
 
   }
   let url;
-
+  fixParams(params);
   if(isApp()) {
-    // 由于 客户端和h5服务页面接口不一致，app的仓位是fben h5的仓位是cabin
-    if(params.cabin) {
-      params.fben = params.cabin;
-      delete params.cabin;
-    }
     url = `${appUrlPrefix}?type=ticket&`;
   } else {
+
     url = `${h5Prefix}/hangban/vue/jipiao/search/${options.type === 1 ? 'domestic' : 'international'}/detail?`;
   }
   let query = new URLSearchParams(params);
