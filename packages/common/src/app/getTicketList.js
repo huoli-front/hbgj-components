@@ -5,28 +5,36 @@ const debugLogTitle = '@hbgj/common App.getTicketList';
 
 
 function fixParams(params) {
+  let result = {};
   if(!isApp()) {
-    params.v = 2;
-    params.dcode = params.dcode || params.scty;
-    params.acode = params.acode || params.ecty;
+    result = {
+      v: 2,
+      dcode: params.dcode || params.scty,
+      acode: params.acode || params.ecty,
+    }
     let cabin = params.cabin || params.fben;
     if(cabin) {
-      params.cabin = cabin;
+      result.cabin = cabin;
     }
     deleteIfExists(params, 'scty');
     deleteIfExists(params, 'ecty');
     deleteIfExists(params, 'fben');
+    Object.assign(result, params);
   } else {
-    params.scty = params.scty || params.dcode;
-    params.ecty = params.ecty || params.acode;
+    result = {
+      scty: params.scty || params.dcode,
+      ecty: params.ecty || params.acode
+    }
     let fben = params.fben || params.cabin;
     if(fben) {
-      params.fben = fben;
+      result.fben = fben;
     }
     deleteIfExists(params, 'dcode');
     deleteIfExists(params, 'acode');
     deleteIfExists(params, 'cabin');
+    Object.assign(result, params);
   }
+  return result;
 }
 
 /**

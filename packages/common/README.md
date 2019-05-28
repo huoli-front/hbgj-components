@@ -22,7 +22,7 @@
 ## Usage
   1. `npm i @hbgj/common`
   2. 引入api，你的环境需要有Promise支持
-### 机票列表
+### 机票列表 参数自动适配了app与h5 可以使用二者的任意参数
 ```ecmascript 6
     // 你可能需@babel/polyfill 但不推荐此做法
     // import "@babel/polyfill";
@@ -39,7 +39,7 @@
     // type  0 国际 1 国内
     const url = App.getTicketList(params, {type: 0 });
 ```
-### 机票详情
+### 机票详情 参数自动适配了app与h5 可以使用二者的任意参数
 ```ecmascript 6
     
     import Common from "@hbgj/common";
@@ -50,8 +50,8 @@
       date: "2019-12-01", // 去程
       fdate: "2019-12-11", // 返程
       analyseSourceEntry: "统计参数",
-      no: '航班号，仅在app内使用',
-      shareid: '仅在h5中使用'
+      no: '航班号，仅在app内需要并且必须使用',
+      shareid: '仅在h5中需要并且必须使用'
     });
     // type  0 国际 1 国内
     const url = App.getTicketDetail(params, {type: 0 });
@@ -69,6 +69,5 @@
         new webpack.ProvidePlugin({
             Promise: ['es6-promise', 'Promise']
         }),
-        ...
     ]
 ```
