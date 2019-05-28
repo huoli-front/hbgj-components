@@ -11,7 +11,7 @@ jobs:
     - echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > "$HOME/.npmrc"
     - echo "//registry.npm.rsscc.cn/repository/hbgj-npm/:_authToken=$HL_TOKEN" >> "$HOME/.npmrc"
     - echo "//registry.npm.rsscc.cn/repository/hbgj-fe/:_authToken=$HL_TOKEN" >> "$HOME/.npmrc"
-    - echo "registry=http://registry.npm.rsscc.cn/repository/hbgj-fe/" > "$HOME/.npmrc"
+    - echo "registry=http://registry.npm.rsscc.cn/repository/hbgj-fe/" >> "$HOME/.npmrc"
     - cat $HOME/.npmrc
     before_script:
     - echo 'before scriptaaaaaaaaaaaaaa'
