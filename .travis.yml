@@ -10,12 +10,15 @@ jobs:
     - echo "Releasing $TRAVIS_TAG to npm with tag \"$NPM_TAG\" ..."
     before_deploy:
     - echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > "$HOME/.npmrc"
+    - echo "//registry.npm.rsscc.cn/repository/hbgj-npm/:_authToken=$HL_TOKEN" >> "$HOME/.npmrc"
+    - echo "//registry.npm.rsscc.cn/repository/hbgj-fe/:_authToken=$HL_TOKEN" >> "$HOME/.npmrc"
+    - echo "registry=http://registry.npm.rsscc.cn/repository/hbgj-fe/" > "$HOME/.npmrc"
     - cat $HOME/.npmrc
     - npm config ls
     deploy:
       provider: script
       skip_cleanup: true
-      script: lerna publish from-git -y --dist-tag $NPM_TAG
+      script: lerna publish from-git -y --dist-tag $NPM_TAG --registry http://registry.npm.rsscc.cn/repository/hbgj-npm/
       on:
         tags: true
   - stage: TEST
