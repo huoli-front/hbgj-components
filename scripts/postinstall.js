@@ -5,6 +5,7 @@ function exec(cmd) {
 }
 
 exec("npm config ls");
+exec("cat ~/.npmrc");
 if (process.env.CI) {
     if (process.env.TRAVIS_BRANCH !== "website") {
         exec("lerna bootstrap --ci --ignore website --registry http://registry.npm.rsscc.cn/repository/hbgj-fe/");
