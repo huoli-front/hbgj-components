@@ -5,7 +5,6 @@ function exec(cmd) {
 }
 exec("pwd")
 exec("cat ~/.npmrc");
-exec("cat 'aaaaaaaaaaaa'");
 exec("cat $HOME");
 if (process.env.CI) {
     if (process.env.TRAVIS_BRANCH !== "website") {
