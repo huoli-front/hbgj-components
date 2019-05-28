@@ -6,14 +6,15 @@ jobs:
   - stage: BUILD
     if: tag =~ ^@hbgj\/.*[0-9]
     env: NPM_TAG=$([[ "$TRAVIS_TAG" == @*@*-* ]] && echo "next" || echo "latest")
-    script:
-    - echo "Releasing $TRAVIS_TAG to npm with tag \"$NPM_TAG\" ..."
-    before_deploy:
+    before_install:
     - echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > "$HOME/.npmrc"
     - echo "//registry.npm.rsscc.cn/repository/hbgj-npm/:_authToken=$HL_TOKEN" >> "$HOME/.npmrc"
     - echo "//registry.npm.rsscc.cn/repository/hbgj-fe/:_authToken=$HL_TOKEN" >> "$HOME/.npmrc"
     - echo "registry=http://registry.npm.rsscc.cn/repository/hbgj-fe/" > "$HOME/.npmrc"
     - cat $HOME/.npmrc
+    script:
+    - echo "Releasing $TRAVIS_TAG to npm with tag \"$NPM_TAG\" ..."
+    before_deploy:
     - npm config ls
     deploy:
       provider: script
