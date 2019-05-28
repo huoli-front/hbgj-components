@@ -4,6 +4,7 @@
   "scripts": {
     "build": "node ./scripts/build.js",
     "build:site": "node ./scripts/build-website.js",
+    "preinstall": "node ./scripts/preinstall.js",
     "postinstall": "node ./scripts/postinstall.js",
     "clean": "git clean -fdX .",
     "start": "node ./scripts/start.js",

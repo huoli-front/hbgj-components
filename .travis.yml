@@ -6,23 +6,8 @@ jobs:
   - stage: BUILD
     if: tag =~ ^@hbgj\/.*[0-9]
     env: NPM_TAG=$([[ "$TRAVIS_TAG" == @*@*-* ]] && echo "next" || echo "latest")
-    before_install:
-    - echo "before Install aaaaaa"
-    - echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > "$HOME/.npmrc"
-    - echo "//registry.npm.rsscc.cn/repository/hbgj-npm/:_authToken=$HL_TOKEN" >> "$HOME/.npmrc"
-    - echo "//registry.npm.rsscc.cn/repository/hbgj-fe/:_authToken=$HL_TOKEN" >> "$HOME/.npmrc"
-    - echo "registry=http://registry.npm.rsscc.cn/repository/hbgj-fe/" >> "$HOME/.npmrc"
-    - cat $HOME/.npmrc
-    - npm config ls
     script:
     - echo "Releasing $TRAVIS_TAG to npm with tag \"$NPM_TAG\" ..."
-    before_deploy:
-    - echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > "$HOME/.npmrc"
-    - echo "//registry.npm.rsscc.cn/repository/hbgj-npm/:_authToken=$HL_TOKEN" >> "$HOME/.npmrc"
-    - echo "//registry.npm.rsscc.cn/repository/hbgj-fe/:_authToken=$HL_TOKEN" >> "$HOME/.npmrc"
-    - echo "registry=http://registry.npm.rsscc.cn/repository/hbgj-fe/" >> "$HOME/.npmrc"
-    - cat $HOME/.npmrc
-    - npm config ls
     deploy:
       provider: script
       skip_cleanup: true
