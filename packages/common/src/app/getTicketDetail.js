@@ -43,6 +43,10 @@ function getTicketDetail(params, options = { type: 0 }) {
   let url;
   fixParams(params);
   if(isApp()) {
+    // app内，国际参数
+    if(options.type === 0) {
+      params.segtype = 'inter';
+    }
     url = `${appUrlPrefix}?type=ticket&`;
   } else {
 
