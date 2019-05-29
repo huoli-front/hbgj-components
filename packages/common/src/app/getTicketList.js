@@ -51,7 +51,7 @@ function fixParams(params, options) {
  * @param options options.type 1: 国内
  * @returns {string}
  */
-function getTicketList(params, options = { type: 0, version: 1}) {
+function getTicketList(params, options = { type: 0, version: 2}) {
   if(debug) {
     try {
       window.console.groupCollapsed(`${debugLogTitle} Params`);
