@@ -4,14 +4,22 @@ const appUrlPrefix = 'weixinhbgj://start';
 const debugLogTitle = '@hbgj/common App.getTicketList';
 
 
-function fixParams(params) {
+function fixParams(params, options) {
   let result = {};
   if(!isApp()) {
-    result = {
-      v: 2,
-      dcode: params.dcode || params.scty,
-      acode: params.acode || params.ecty,
+    if(options.type !== 0 || options.version === 2) {
+      result = {
+        v: 2,
+        dcode: params.dcode || params.scty,
+        acode: params.acode || params.ecty,
+      }
+    } else {
+      result = {
+        dep: params.dcode || params.scty,
+        arr: params.acode || params.ecty,
+      }
     }
+
     let cabin = params.cabin || params.fben;
     if(cabin) {
       result.cabin = cabin;
@@ -43,7 +51,7 @@ function fixParams(params) {
  * @param options options.type 1: 国内
  * @returns {string}
  */
-function getTicketList(params, options = { type: 0 }) {
+function getTicketList(params, options = { type: 0, version: 1}) {
   if(debug) {
     try {
       window.console.groupCollapsed(`${debugLogTitle} Params`);
@@ -59,7 +67,7 @@ function getTicketList(params, options = { type: 0 }) {
 
   }
   let url;
-  const finalParams = fixParams(params);
+  const finalParams = fixParams(params, options);
   if(isApp()) {
     url = `${appUrlPrefix}?type=ticketlist&`;
   } else {
