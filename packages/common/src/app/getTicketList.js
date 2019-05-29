@@ -59,13 +59,13 @@ function getTicketList(params, options = { type: 0 }) {
 
   }
   let url;
-  fixParams(params);
+  const finalParams = fixParams(params);
   if(isApp()) {
     url = `${appUrlPrefix}?type=ticketlist&`;
   } else {
     url = `${h5Prefix}/hangban/vue/jipiao/search/${options.type === 1 ? 'domestic' : 'international'}/list?`;
   }
-  let query = new URLSearchParams(params);
+  let query = new URLSearchParams(finalParams);
   url = `${url}${query.toString()}`;
 
   if(debug) {

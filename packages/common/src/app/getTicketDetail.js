@@ -10,7 +10,7 @@ function fixParams(params, options) {
       v: 2,
       dcode: params.dcode || params.dep,
       acode: params.acode || params.arr
-    }
+    };
     deleteIfExists(params, 'dep');
     deleteIfExists(params, 'arr');
     deleteIfExists(params, 'no');
