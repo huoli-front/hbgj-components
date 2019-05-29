@@ -17,7 +17,7 @@ function getHome() {
     try {
       window.console.groupEnd();
     } catch (e) {
-      window.console.log('log end');
+      window.console.log('log end.');
     }
   }
   let url;
