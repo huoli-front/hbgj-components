@@ -6,7 +6,7 @@ const debugLogTitle = '@hbgj/common App.getHome';
  * 生成app首页链接
  * @returns {string}
  */
-function getHome() {
+function getHome(options = {}) {
   if(debug) {
     try {
       window.console.groupCollapsed(`${debugLogTitle} Params`);
@@ -21,7 +21,7 @@ function getHome() {
     }
   }
   let url;
-  if(isApp()) {
+  if(isApp() || options.useAppHref) {
     url = `${appUrlPrefix}?type=ticketmain`;
   } else {
     url = `${h5Prefix}/hangban/vue/jipiao/home`;

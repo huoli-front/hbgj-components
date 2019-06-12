@@ -6,7 +6,20 @@ const debugLogTitle = '@hbgj/common App.getTicketList';
 
 function fixParams(params, options) {
   let result = {};
-  if(!isApp()) {
+  if(isApp() || options.useAppHref) {
+    result = {
+      scty: params.scty || params.dcode,
+      ecty: params.ecty || params.acode
+    }
+    let fben = params.fben || params.cabin;
+    if(fben) {
+      result.fben = fben;
+    }
+    deleteIfExists(params, 'dcode');
+    deleteIfExists(params, 'acode');
+    deleteIfExists(params, 'cabin');
+    Object.assign(result, params);
+  } else {
     if(options.type !== 0 || options.version === 2) {
       result = {
         v: 2,
@@ -28,19 +41,6 @@ function fixParams(params, options) {
     deleteIfExists(params, 'ecty');
     deleteIfExists(params, 'fben');
     Object.assign(result, params);
-  } else {
-    result = {
-      scty: params.scty || params.dcode,
-      ecty: params.ecty || params.acode
-    }
-    let fben = params.fben || params.cabin;
-    if(fben) {
-      result.fben = fben;
-    }
-    deleteIfExists(params, 'dcode');
-    deleteIfExists(params, 'acode');
-    deleteIfExists(params, 'cabin');
-    Object.assign(result, params);
   }
   return result;
 }
@@ -49,6 +49,7 @@ function fixParams(params, options) {
  * 生成机票详情页面链接， h5环境，需要有options参数判断是国内还是国际 默认当成国际
  * @param params
  * @param options options.type 1: 国内
+ * @param options options.useAppHref true 强制生成app链接
  * @returns {string}
  */
 function getTicketList(params, options = { type: 0, version: 2}) {
@@ -68,7 +69,7 @@ function getTicketList(params, options = { type: 0, version: 2}) {
   }
   let url;
   const finalParams = fixParams(params, options);
-  if(isApp()) {
+  if(isApp() || options.useAppHref) {
     url = `${appUrlPrefix}?type=ticketlist&`;
   } else {
     url = `${h5Prefix}/hangban/vue/jipiao/search/${options.type === 1 ? 'domestic' : 'international'}/list?`;

@@ -5,17 +5,7 @@ const debugLogTitle = '@hbgj/common App.getTicketDetail';
 
 function fixParams(params, options) {
   let result = {};
-  if(!isApp()) {
-    result = {
-      v: 2,
-      dcode: params.dcode || params.dep,
-      acode: params.acode || params.arr
-    };
-    deleteIfExists(params, 'dep');
-    deleteIfExists(params, 'arr');
-    deleteIfExists(params, 'no');
-    Object.assign(result, params);
-  } else {
+  if(isApp() || options.useAppHref) {
     result = {
       dep: params.dep || params.dcode,
       arr: params.arr || params.acode
@@ -28,6 +18,16 @@ function fixParams(params, options) {
     deleteIfExists(params, 'acode');
     deleteIfExists(params, 'shareid');
     Object.assign(result, params);
+  } else {
+    result = {
+      v: 2,
+      dcode: params.dcode || params.dep,
+      acode: params.acode || params.arr
+    };
+    deleteIfExists(params, 'dep');
+    deleteIfExists(params, 'arr');
+    deleteIfExists(params, 'no');
+    Object.assign(result, params);
   }
   return result;
 }
@@ -35,6 +35,7 @@ function fixParams(params, options) {
  * 生成机票详情页面链接， h5环境，需要有options参数判断是国内还是国际 默认当成国际
  * @param params
  * @param options options.type 1: 国内
+ * @param options options.useAppHref true 强制生成app链接
  * @returns {string}
  */
 function getTicketDetail(params, options = { type: 0 }) {
@@ -54,7 +55,7 @@ function getTicketDetail(params, options = { type: 0 }) {
   }
   let url;
   const finalParams = Object.freeze(fixParams(params, options));
-  if(isApp()) {
+  if(isApp() || options.useAppHref) {
     url = `${appUrlPrefix}?type=ticket&`;
   } else {
     url = `${h5Prefix}/hangban/vue/jipiao/search/${options.type === 1 ? 'domestic' : 'international'}/detail?`;

@@ -6,7 +6,7 @@ const debugLogTitle = '@hbgj/common App.getCouponList';
  * 生成优惠券列表页面链接
  * @returns {string}
  */
-function getCouponList() {
+function getCouponList(options = {}) {
   if(debug) {
     try {
       window.console.groupCollapsed(`${debugLogTitle} Params`);
@@ -21,7 +21,7 @@ function getCouponList() {
     }
   }
   let url;
-  if(isApp()) {
+  if(isApp() || options.useAppHref) {
     url = `${appUrlPrefix}?type=couponslist`;
   } else {
     url = `${h5Prefix}/hangban/vue/individual/coupons`;
