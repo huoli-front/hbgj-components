@@ -7,9 +7,22 @@ const debugLogTitle = '@hbgj/common App.getTicketList';
 function fixParams(params, options) {
   let result = {};
   if(isApp() || options.useAppHref) {
-    result = {
-      scty: params.scty || params.dcode,
-      ecty: params.ecty || params.acode
+    // 客户端多程参数
+    if(options.mult) {
+      result = {
+        deps: params.scty || params.dcode,
+        arrs: params.ecty || params.acode,
+        dates: params.date,
+        ismulti: 1
+      }
+      deleteIfExists(params, 'scty');
+      deleteIfExists(params, 'ecty');
+      deleteIfExists(params, 'date');
+    } else {
+      result = {
+        scty: params.scty || params.dcode,
+        ecty: params.ecty || params.acode
+      }
     }
     let fben = params.fben || params.cabin;
     if(fben) {
@@ -50,6 +63,7 @@ function fixParams(params, options) {
  * @param params
  * @param options options.type 1: 国内
  * @param options options.useAppHref true 强制生成app链接
+ * @param options options.mutl  1 多程 其他不传
  * @returns {string}
  */
 function getTicketList(params, options = { type: 0, version: 2}) {
