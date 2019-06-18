@@ -6,6 +6,7 @@ const debugLogTitle = '@hbgj/common App.getTicketList';
 
 function fixParams(params, options) {
   let result = {};
+  const arrDate = params.fdate || params.arrdate;
   if(isApp() || options.useAppHref) {
     // 客户端多程参数
     if(options.mult) {
@@ -14,7 +15,11 @@ function fixParams(params, options) {
         arrs: params.ecty || params.acode,
         dates: params.date,
         ismulti: 1
+      };
+      if(arrDate) {
+        result.arrdate = arrDate;
       }
+
       deleteIfExists(params, 'scty');
       deleteIfExists(params, 'ecty');
       deleteIfExists(params, 'date');
@@ -22,16 +27,12 @@ function fixParams(params, options) {
       result = {
         scty: params.scty || params.dcode,
         ecty: params.ecty || params.acode
-      }
+      };
     }
     let fben = params.fben || params.cabin;
     if(fben) {
       result.fben = fben;
     }
-    deleteIfExists(params, 'dcode');
-    deleteIfExists(params, 'acode');
-    deleteIfExists(params, 'cabin');
-    Object.assign(result, params);
   } else {
     if(options.type !== 0 || options.version === 2) {
       result = {
@@ -46,15 +47,24 @@ function fixParams(params, options) {
       }
     }
 
+    if(arrDate) {
+      result.fdate = arrDate;
+    }
     let cabin = params.cabin || params.fben;
     if(cabin) {
       result.cabin = cabin;
     }
-    deleteIfExists(params, 'scty');
-    deleteIfExists(params, 'ecty');
-    deleteIfExists(params, 'fben');
-    Object.assign(result, params);
   }
+  // 已经手动处理的参数，删除原数据
+  deleteIfExists(params, 'scty');
+  deleteIfExists(params, 'ecty');
+  deleteIfExists(params, 'dcode');
+  deleteIfExists(params, 'acode');
+  deleteIfExists(params, 'fben');
+  deleteIfExists(params, 'cabin');
+  deleteIfExists(params, 'fdate');
+  deleteIfExists(params, 'arrdate');
+  Object.assign(result, params);
   return result;
 }
 
