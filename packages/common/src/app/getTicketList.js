@@ -16,9 +16,6 @@ function fixParams(params, options) {
         dates: params.date,
         ismulti: 1
       };
-      if(arrDate) {
-        result.arrdate = arrDate;
-      }
 
       deleteIfExists(params, 'scty');
       deleteIfExists(params, 'ecty');
@@ -32,6 +29,9 @@ function fixParams(params, options) {
     let fben = params.fben || params.cabin;
     if(fben) {
       result.fben = fben;
+    }
+    if(arrDate) {
+      result.arrdate = arrDate;
     }
   } else {
     if(options.type !== 0 || options.version === 2) {
