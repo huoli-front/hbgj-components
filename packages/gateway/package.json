@@ -1,0 +1,33 @@
+{
+  "name": "gateway",
+  "version": "1.0.0",
+  "description": "",
+  "author": "yujindong <yujd@133.cn>",
+  "homepage": "https://github.com/huoli-front/hbgj-components/tree/master/packages/gateway",
+  "license": "MIT",
+  "main": "index.js",
+  "module": "dist/esm/gateway.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "lint": "eslint modules",
+    "prepublishOnly": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "directories": {
+    "src": "src",
+    "test": "__tests__"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/huoli-front/hbgj-components.git"
+  },
+  "bugs": {
+    "url": "https://github.com/huoli-front/hbgj-components/issues"
+  }
+}
