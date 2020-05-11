@@ -2,8 +2,8 @@
 const path = require('path');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
-const utils = require("./utils");
-const config = require("../config");
+const utils = require('./utils');
+const config = require('../config');
 const baseWebpackConfig = require('./webpack.base.conf');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
@@ -12,7 +12,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const webpackConfig = merge(baseWebpackConfig, {
-  mode: "production",
+  mode: 'production',
   module: {
     rules: utils.styleLoaders({
       sourceMap: config.build.productionSourceMap,
@@ -42,7 +42,7 @@ const webpackConfig = merge(baseWebpackConfig, {
         cssProcessorOptions: config.build.productionSourceMap
           ? { safe: true, map: { inline: false } }
           : { safe: true }
-      }),
+      })
     ],
 
     runtimeChunk: {
@@ -69,7 +69,7 @@ const webpackConfig = merge(baseWebpackConfig, {
           test: /[\\/]node_modules[\\/](vue.*)[\\/]/,
           name: true,
           // filename: utils.assetsPath('js/[name].[chunkhash].js'),
-          chunks: 'all',
+          chunks: 'all'
         },
         default: {
           minChunks: 2,
@@ -119,9 +119,7 @@ const webpackConfig = merge(baseWebpackConfig, {
       }
     ])
   ]
-})
-
-
+});
 
 if (config.build.productionGzip) {
   const CompressionWebpackPlugin = require('compression-webpack-plugin');

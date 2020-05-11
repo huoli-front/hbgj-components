@@ -9,7 +9,7 @@ module.exports = {
     // },
     "postcss-import": {},
     "postcss-url": {},
-    'autoprefixer': { browsers: ['last 3 versions', 'iOS 9'] },
+    'autoprefixer': require('autoprefixer'),
     'cssnano': {}
   }
 };

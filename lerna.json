@@ -1,7 +1,4 @@
 {
-  "packages": [
-    "packages/*",
-    "website"
-  ],
+  "packages": ["packages/*", "website", "website-bak"],
   "version": "independent"
 }

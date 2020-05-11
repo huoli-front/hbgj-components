@@ -90,7 +90,8 @@ const esm = [
 
 // 将npm package name 转换成模块名
 const globals = {
-  'js-cookie': 'cookie'
+  "axios": "axios",
+  "js-interceptor-lite": "jsInterceptorLite"
 }
 const umd = [
   {

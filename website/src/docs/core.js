@@ -1,13 +1,9 @@
 export default {
   api: [
-    // require('../tools/docs/api/quickapp-api.md'),
-    // require('../tools/docs/api/native-api.md')
+
   ],
 
   guides: [
-    require('./core/docs/guides/quick-start.md'),
-    require('./core/docs/guides/b.md'),
-    require('./core/docs/guides/c.md')
   ]
 
   // examples: [

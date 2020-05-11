@@ -1,15 +1,15 @@
 'use strict';
 const path = require('path');
-const utils = require("./utils");
+const utils = require('./utils');
 const config = require('../config');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const vueLoaderConfig = require('./vue-loader.conf');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-function resolve (dir) {
-    return path.join(__dirname, '..', dir)
+function resolve(dir) {
+  return path.join(__dirname, '..', dir);
 }
 module.exports = {
-  context: resolve(""),
+  context: resolve(''),
   entry: {
     app: './src/main.js'
   },
@@ -25,13 +25,13 @@ module.exports = {
     extensions: ['.js', '.vue', '.json', '.md'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
-      '@': resolve('src'),
+      '@': resolve('src')
     }
   },
   resolveLoader: {
     modules: [
-      resolve("node_modules"),
-      resolve("src/loaders")
+      resolve('node_modules'),
+      resolve('src/loaders')
     ]
   },
   module: {
@@ -49,7 +49,7 @@ module.exports = {
       },
       {
         test: /\.vue$/,
-        loader: 'vue-loader',
+        loader: 'vue-loader'
         // options: vueLoaderConfig
       },
       {
@@ -91,7 +91,7 @@ module.exports = {
       // },
       {
         test: /\.md$/,
-        loader: "markdown-loader"
+        loader: 'markdown-loader'
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,

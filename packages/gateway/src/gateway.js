@@ -1,4 +1,5 @@
 export default class Gateway {
+  static Gateway = Gateway
   static REQUEST_TYPE = {
     GET: "get",
     POST: "post",

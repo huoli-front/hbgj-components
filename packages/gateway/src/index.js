@@ -1,4 +1,9 @@
 import Gateway from "./gateway";
+import Interceptor from "js-interceptor-lite";
 
-export { Gateway };
-export default new Gateway();
+// eslint-disable-next-line no-console
+console.log(Interceptor);
+
+let gateway = new Gateway();
+
+export default gateway;

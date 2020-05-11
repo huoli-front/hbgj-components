@@ -33,7 +33,7 @@ export default {
     fetch (route) {
       const { category, doc } = route.params;
       const guides = this[category]['guides'];
-      const guidesInfo = guides.filter((item) => {
+      const guidesInfo = guides.filter(item => {
         return item.title.slug === doc;
       })[0];
       if (!guidesInfo) {
@@ -47,15 +47,12 @@ export default {
         const { doc, pos } = this.$route.params;
         const hash = pos ? `${doc}-${pos}` : doc;
         const cur = this.$el.querySelector(`#${hash}`);
-        console.log(cur.offsetTop);
+        // console.log(cur.offsetTop);
         document.documentElement.scroll(0, cur.offsetTop);
       });
     }
   }
-
 };
 </script>
 
-<style lang="less">
-
-</style>
+<style lang="less"></style>
