@@ -6,7 +6,8 @@
   "homepage": "https://github.com/huoli-front/hbgj-components#readme",
   "license": "MIT",
   "main": "dist/cjs/native-api.js",
-  "module": "",
+  "module": "dist/esm/native-api.js",
+  "typings": "./index.d.ts",
   "directories": {
     "lib": "dist",
     "test": "__tests__"
