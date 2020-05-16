@@ -87,7 +87,7 @@ export default new Router({
           ]
         }
       ]
-    },
+    }
     // {
     //   path: '/guides',
     //   name: 'guide',
@@ -151,15 +151,15 @@ export default new Router({
     //     }
     //   ]
     // },
-    {
-      path: '*',
-      redirect: {
-        name: 'category',
-        params: {
-          category: 'tools'
-        }
-      }
-    }
+    // {
+    //   path: '*',
+    //   redirect: {
+    //     name: 'category',
+    //     params: {
+    //       category: 'tools'
+    //     }
+    //   }
+    // }
 
   ]
 });
