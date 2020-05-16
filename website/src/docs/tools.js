@@ -1,5 +1,6 @@
 export default {
   api: [
+    require('./core/docs/guides/gateway.md'),
     require('./tools/docs/api/quickapp-api.md'),
     require('./tools/docs/api/native-api.md')
   ],

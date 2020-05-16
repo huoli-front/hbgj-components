@@ -1,5 +1,3 @@
-
-
 .api-wrapper {
   padding-left: 20px;
   display: block;
@@ -21,7 +19,9 @@
     white-space: pre-wrap;
   }
 
-  h1, h2, h3 {
+  h1,
+  h2,
+  h3 {
     position: relative;
     clear: both;
   }
@@ -46,8 +46,7 @@
     margin: 1em 0;
   }
 
-
-  >:not(pre):not(h1):not(h2) {
+  > :not(pre):not(h1):not(h2) {
     display: block;
     clear: both;
     float: left;
@@ -56,20 +55,17 @@
   }
 
   @media screen and (max-width: 1270px) {
-    >pre {
+    > pre {
       float: none;
       padding: 20px;
       border-radius: 6px;
       overflow: auto;
       width: 100%;
     }
-    >:not(pre):not(h1):not(h2) {
+    > :not(pre):not(h1):not(h2) {
       display: block;
       float: none;
       width: auto;
     }
-
   }
-
-
 }

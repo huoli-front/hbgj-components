@@ -1,18 +1,20 @@
 {
   "name": "@hbgj/native-api",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "native交互h5",
   "author": "yujindong <83575615@qq.com>",
   "homepage": "https://github.com/huoli-front/hbgj-components#readme",
   "license": "MIT",
   "main": "dist/cjs/native-api.js",
-  "module": "",
+  "module": "dist/esm/native-api.js",
+  "typings": "./index.d.ts",
   "directories": {
     "lib": "dist",
     "test": "__tests__"
   },
   "files": [
-    "dist"
+    "dist",
+    "index.d.ts"
   ],
   "publishConfig": {
     "access": "public"
