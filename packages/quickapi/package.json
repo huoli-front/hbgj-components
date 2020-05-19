@@ -6,7 +6,8 @@
   "typings": "index.d.ts",
   "module": "dist/esm/quickapi.js",
   "files": [
-    "dist"
+    "dist",
+    "index.d.ts"
   ],
   "publishConfig": {
     "access": "public"
