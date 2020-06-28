@@ -12,7 +12,7 @@ jobs:
     deploy:
       provider: script
       skip_cleanup: true
-      script: lerna publish from-git -y --dist-tag $NPM_TAG --registry http://registry.npm.rsscc.cn/repository/hbgj-npm/
+      script: lerna publish from-git -y --dist-tag $NPM_TAG --registry https://registry.npmjs.org/
       on:
         tags: true
   - stage: TEST
