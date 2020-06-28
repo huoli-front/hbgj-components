@@ -8,6 +8,7 @@ jobs:
     env: NPM_TAG=$([[ "$TRAVIS_TAG" == @*@*-* ]] && echo "next" || echo "latest")
     script:
     - echo "Releasing $TRAVIS_TAG to npm with tag \"$NPM_TAG\" ..."
+    before_deploy: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > "$HOME/.npmrc"
     deploy:
       provider: script
       skip_cleanup: true
