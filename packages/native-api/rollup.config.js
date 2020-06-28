@@ -9,7 +9,7 @@ const ModuleName = "NativeApi";
 const moduleFileName = "native-api";
 const pkg = require("./package.json");
 
-console.log(pkg.version);
+console.log(`构建 ${ModuleName} ${pkg.version}`);
 //
 // const createLintingRule = () => ({
 //     throwOnError: true,

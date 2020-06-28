@@ -9,6 +9,7 @@ const ModuleName = "QuickApi";
 const moduleFileName = "quickapi";
 const pkg = require("./package.json");
 
+console.log(`构建 ${ModuleName} ${pkg.version}`);
 //
 // const createLintingRule = () => ({
 //     throwOnError: true,
