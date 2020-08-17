@@ -3,6 +3,8 @@ declare namespace HBGJ {
     isQuickApp: boolean;
     isHBGJ: boolean;
     isGTGJ: boolean;
+    isXCGJ: boolean;
+    isHuoLiQuickApp: boolean;
   }
   interface NativeApiInstance {
     config: QuickApiConfig;

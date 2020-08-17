@@ -9,8 +9,8 @@ const quickappDebug = searchStr.indexOf('quickappDebug=true') !== -1;
 const callbacks = {};
 
 if (config.isQuickApp) {
-    system.onmessage = function(message) {
-        if(quickappDebug) {
+    system.onmessage = function (message) {
+        if (quickappDebug) {
             window.console.log('quickapp ==> javascript: ' + message);
         }
         try {
@@ -39,13 +39,13 @@ if (config.isQuickApp) {
 function invoke(method, param) {
     return new Promise((resolve, reject) => {
         const request = jsonrpc.request(idGenerator.next().value, method, param);
-        if(quickappDebug) {
+        if (quickappDebug) {
             window.console.log('javascript ==> quickapp: ' + request.toString());
         }
 
         if (config.isQuickApp) {
             send(request.toString());
-            callbacks[request.id] = function(err, result) {
+            callbacks[request.id] = function (err, result) {
                 if (err) {
                     reject(err);
                 } else {
