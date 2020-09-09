@@ -44,11 +44,11 @@ function invoke(method, param) {
   return new Promise((resolve, reject) => {
     const request = jsonrpc.request(idGenerator.next().value, method, param);
     if (quickappDebug) {
-      window.console.log('javascript ==> quickapp: ' + request.toString());
+      window.console.log('javascript ==> quickapp: ' + request.serialize());
     }
 
     if (config.isQuickApp) {
-      send(request.toString());
+      send(request.serialize());
       callbacks[request.id] = function (err, result) {
         if (err) {
           reject(err);
