@@ -12,7 +12,6 @@ if (config.isQuickApp) {
   system.onmessage = function (message) {
     if (quickappDebug) {
       window.console.log('quickapp ==> javascript: ' + message);
-      window.console.log('quickapp ==> javascript: ' + JSON.stringify(message));
     }
     try {
       const result = jsonrpc.parse(message);
