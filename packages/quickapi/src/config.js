@@ -25,4 +25,7 @@ const config = {
   isXCGJ
 };
 
+export const quickappDebug = () => {
+  return window.location.href.indexOf('debug=true') !== -1;
+} 
 export default config;

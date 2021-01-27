@@ -3,21 +3,15 @@ import config from "./config";
 import jsonrpc from "jsonrpc-lite";
 import { idGenerator } from "./utils";
 import { send } from "./stream";
-const searchStr = window.location.search;
-const quickappDebug = searchStr.indexOf('quickappDebug=true') !== -1;
+import { quickApiLog } from './utils';
 // const methods = {};
 const callbacks = {};
 
 if (config.isQuickApp) {
   system.onmessage = function (message) {
-    if (quickappDebug) {
-      window.console.log('quickapp ==> javascript: ' + message);
-    }
+    quickApiLog(message, "receive");
     try {
       const result = jsonrpc.parse(message);
-      if (quickappDebug) {
-        window.console.log('quickapp ==> javascript: ' + message);
-      }
       let callback = callbacks[result.payload.id];
       switch (result.type) {
         case "success":
@@ -42,12 +36,8 @@ if (config.isQuickApp) {
 function invoke(method, param) {
   return new Promise((resolve, reject) => {
     const request = jsonrpc.request(idGenerator.next().value, method, param);
-    if (quickappDebug) {
-      window.console.log('javascript ==> quickapp: ' + request.serialize());
-    }
-
+    quickApiLog(request.serialize(), "send");
     if (config.isQuickApp) {
-      send(request.serialize());
       callbacks[request.id] = function (err, result) {
         if (err) {
           reject(err);
@@ -55,6 +45,7 @@ function invoke(method, param) {
           resolve(result);
         }
       };
+      send(request.serialize());
     } else {
       const NotQuickAppError = jsonrpc.JsonRpcError.internalError({
         info: "当前页面不在快应用环境中"
