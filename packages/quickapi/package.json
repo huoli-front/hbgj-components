@@ -1,6 +1,6 @@
 {
   "name": "@hbgj/quickapi",
-  "version": "1.1.22",
+  "version": "1.1.23",
   "description": "quickapi bridge",
   "main": "index.js",
   "typings": "index.d.ts",
