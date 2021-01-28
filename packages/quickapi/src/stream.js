@@ -3,6 +3,8 @@ import config from "./config";
 
 export function send(message) {
   if (config.isQuickApp) {
-    system.postMessage(message);
+    setTimeout(() => {
+      system.postMessage(message);
+    }, 0);
   }
 }
