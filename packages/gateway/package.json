@@ -1,10 +1,13 @@
 {
   "name": "@hbgj/gateway",
+  "libName": "Gateway",
   "version": "0.0.1",
   "description": "gateway util",
   "main": "index.js",
   "typings": "index.d.ts",
   "module": "dist/esm/gateway.js",
+  "author": "yujindong <83575615@qq.com>",
+  "license": "MIT",
   "files": [
     "dist",
     "index.d.ts"
@@ -13,12 +16,17 @@
     "access": "public"
   },
   "scripts": {
-    "build": "echo \"Error: no test specified\" && exit 1",
+    "build": "rollup -c",
     "lint": "echo \"Error: no test specified\" && exit 1",
     "prepublishOnly": "echo \"Error: no test specified\" && exit 1",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "rollup": "^2.38.4"
+    "gulp": "^4.0.2",
+    "gulp-typescript": "^6.0.0-alpha.1",
+    "ts-node": "^9.1.1"
+  },
+  "dependencies": {
+    "typescript": "^4.1.3"
   }
 }

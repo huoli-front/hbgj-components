@@ -1,0 +1,11 @@
+{
+  "module": "ESNext",
+  "target": "ES6",
+  "declaration": true,
+  "jsx": "preserve",
+  "strictNullChecks": true,
+  "noUnusedParameters": true,
+  "noUnusedLocals": true,
+  "moduleResolution": "Node",
+  "allowSyntheticDefaultImports": true
+}
